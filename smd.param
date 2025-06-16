@@ -1,0 +1,14 @@
+Nrun 100
+sync_interval_step 400
+timestep 0.0025
+restart_step 50
+dy 156.25
+density 0.85
+thermal_conductivity 85
+temp_init 0.7
+temp_w_bottom 0.7
+temp_w_top 0.0
+stress_w_top 0.0
+force_external 2.0e-5
+str_coefficient 0.5
+

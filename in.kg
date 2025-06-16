@@ -1,0 +1,28 @@
+# settings
+#package intel 0
+#suffix intel
+#newton off 
+variable	rc equal 2.5
+
+units		lj
+atom_style	bond
+special_bonds	fene
+
+pair_style  lj/cut ${rc}
+bond_style	fene
+
+read_data	./data.kg
+
+pair_coeff  1 1 1.0 1.0 ${rc}
+bond_coeff	1 30.0 1.5 1.0 1.0
+
+pair_modify shift yes
+neighbor	0.3 bin
+neigh_modify	delay 0 every 1
+
+group fluid type 1
+
+#fix mom all momentum 1 linear 1 0 0
+dump 1 all custom 1000000 traj.xyz id type mol x y z 
+
+
