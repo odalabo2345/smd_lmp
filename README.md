@@ -10,7 +10,7 @@ To quickly set up and run the simulation, follow these steps:
 git clone https://github.com/odalabo2345/smd_lmp.git
 cd smd_lmp
 sh setup.sh
-python smd_lmp_pressure-flow.py -i in.kg -o result.dat -d md_result -n 16 -p smd.param
+mpirun -np 32 python smd_lmp_pressure-flow.py -i in.kg -o result.dat -d md_result -n 16 -p smd.param
 ```
 
 ## Features
